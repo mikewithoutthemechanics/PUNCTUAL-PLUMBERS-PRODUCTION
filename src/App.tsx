@@ -966,9 +966,9 @@ export default function App() {
           <div>
             <div className="text-white font-[700] mb-2">Route Offices</div>
             <ul className="space-y-[7px] text-white/60">
-              <li>George HQ – 083 237 9132</li>
-              <li>Knysna – 044 382 0199</li>
-              <li>Plettenberg Bay – 044 533 0144</li>
+              <li>Knysna HQ – 083 237 9132</li>
+              <li>George – 083 237 9132</li>
+              <li>Plettenberg Bay – 083 237 9132</li>
               <li>Emergency 24/7 – same number</li>
             </ul>
           </div>
