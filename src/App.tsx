@@ -977,7 +977,7 @@ export default function App() {
             <div className="text-white/60 leading-relaxed">
               PIRB 3419<br/>
               IOPSA • SANS 10252<br/>
-              <span className="text-[#a3f9ff]">hello@gardenrouteplumbing.co.za</span>
+              <span className="text-[#a3f9ff]">punctualplumbers@outlook.com</span>
             </div>
           </div>
         </div>
