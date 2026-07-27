@@ -136,7 +136,7 @@ export default function App() {
       else if(lc.includes("geyser"))
         a = "Geyser replacement: R18,900–R36,500 incl. COC. Burst swaps same-day. 7-yr workmanship. Load-shedding smart timer included.";
       else if(lc.includes("price")||lc.includes("cost")||lc.includes("quote"))
-        a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-out if we work. WhatsApp photos for instant range.";
+a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-out if we work.";
       else if(lc.includes("water"))
         a = "Garden Route water-saving payback: 13–18 months, SANS compliant, EV-ready timers. Rebates available via our energy partner.";
       else if(lc.includes("area")||lc.includes("where"))
@@ -819,17 +819,10 @@ export default function App() {
             <div>
               <div className="text-[11.5px] tracking-[0.22em] text-[#b9faff] font-[700]">READY?</div>
               <h3 className="display text-[34px] sm:text-[46px] font-[800] mt-3 text-white leading-[0.96]">Flow with confidence.<br/>Your water. Our craft.</h3>
-              <p className="mt-4 text-[15.8px] text-white/78 max-w-[530px]">
-                Free route assessment today. Fixed quotes, coastal copper, PIRB stamped. WhatsApp photos – we quote in under 20 minutes.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3 text-[12.6px] text-white/80">
-                <span>📍 Mossel Bay → Storms River</span>
-                <span>•</span>
-                <span>🕑 Avg reply 9 min</span>
-                <span>•</span>
-                <span>🛡️ 7-yr guarantee</span>
-              </div>
-            </div>
+<p className="mt-4 text-[15.8px] text-white/78 max-w-[530px]">
+                 Free route assessment today. Fixed quotes, coastal copper, PIRB stamped.
+</p>
+             </div>
             <div className="rounded-[24px] bg-white text-[#1b2d3d] p-[20px] sm:p-[26px] shadow-[0_28px_80px_rgba(0,0,0,0.32)]">
               <div className="text-[13.3px] font-[750]" style={{ color: colors.ocean }}>Free Garden Route assessment</div>
               <form className="mt-4 grid gap-[12px]" onSubmit={e=>{e.preventDefault(); alert("Thank you!")}}>
