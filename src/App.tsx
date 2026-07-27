@@ -98,7 +98,7 @@ export default function App() {
   ];
 const [flowIdx, setFlowIdx] = useState(1);
    const [flowPaused, setFlowPaused] = useState(false);
-   const touchStartRef = useRef(0);
+
   useEffect(() => {
     if (flowPaused) return;
     const id = setInterval(() => setFlowIdx(i => i >= paddedFlow.length - 2 ? 1 : i + 1), 4200);
@@ -487,45 +487,32 @@ const [flowIdx, setFlowIdx] = useState(1);
             <h2 className="display text-[34px] sm:text-[48px] font-[800] mt-3 text-white">Water wisdom from the Route.</h2>
           </div>
           <div className="mt-12 relative" style={{ perspective:"1300px" }}>
-            <div className="relative h-[340px] sm:h-[380px] flex items-center justify-center" style={{ transformStyle:"preserve-3d" }}
-              onTouchStart={(e) => { setFlowPaused(true); touchStartRef.current = e.touches[0].clientX; }}
-              onTouchEnd={(e) => {
-                const diff = touchStartRef.current - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 50) {
-                  setFlowIdx(i => diff > 0 ? (i >= paddedFlow.length - 2 ? 1 : i + 1) : (i <= 1 ? paddedFlow.length - 2 : i - 1));
-                }
-                setFlowPaused(false);
-              }}>
+            <div className="relative h-[340px] sm:h-[380px] flex items-center justify-center">
               {paddedFlow.map((item, i) => {
                 const diff = i - flowIdx;
+                if (diff === 0) return null;
                 const abs = Math.abs(diff);
                 const sign = Math.sign(diff) || 1;
-                const isCenter = diff === 0;
-                const x = isCenter ? 0 : sign * (180 + (abs - 1) * 100);
-                const scale = isCenter ? 1 : Math.max(0.45, 0.85 - (abs - 1) * 0.18);
-                const rotateY = isCenter ? 0 : sign * (abs === 1 ? -22 : -40);
-                const z = isCenter ? 0 : -(abs * 60);
-                const zIndex = isCenter ? 50 : Math.max(10, 50 - abs * 8);
+                const x = sign * (180 + (abs - 1) * 100);
+                const scale = Math.max(0.45, 0.85 - (abs - 1) * 0.18);
+                const rotateY = sign * (abs === 1 ? -22 : -40);
+                const z = -(abs * 60);
                 return (
                   <motion.div
                     key={i}
                     animate={{ x, scale, rotateY, z }}
                     transition={{ duration:0.6, ease:[0.22,1,0.36,1] }}
                     className="absolute cursor-pointer"
-                    style={{ backfaceVisibility:"hidden", zIndex }}
+                    style={{ backfaceVisibility:"hidden" }}
                     onClick={() => setFlowIdx(i)}
                     onMouseEnter={() => setFlowPaused(true)}
                     onMouseLeave={() => setFlowPaused(false)}
                   >
                     <div className="w-[290px] sm:w-[360px] rounded-[24px] p-[24px] sm:p-[28px] border"
                       style={{
-                        background: isCenter
-                          ? "linear-gradient(170deg, rgba(23,48,76,0.98), rgba(8,24,44,0.98))"
-                          : "linear-gradient(170deg, rgba(10,22,40,0.94), rgba(8,18,34,0.94))",
-                        borderColor: isCenter
-                          ? "rgba(0,210,255,0.25)"
-                          : "rgba(255,255,255,0.13)",
-                        boxShadow: isCenter ? "0 20px 70px rgba(0,210,255,0.13)" : "none",
+                        background: "linear-gradient(170deg, rgba(10,22,40,0.94), rgba(8,18,34,0.94))",
+                        borderColor: "rgba(255,255,255,0.13)",
+                        boxShadow: "none",
                       }}
                     >
                       <div className="flex items-start justify-between">
@@ -549,6 +536,47 @@ const [flowIdx, setFlowIdx] = useState(1);
                   </motion.div>
                 );
               })}
+              {flowIdx >= 0 && flowIdx < paddedFlow.length && (() => {
+                const item = paddedFlow[flowIdx];
+                return (
+                  <motion.div
+                    key={flowIdx}
+                    animate={{ x:0, scale:1, rotateY:0, z:0 }}
+                    transition={{ duration:0.6, ease:[0.22,1,0.36,1] }}
+                    className="absolute cursor-pointer"
+                    style={{ backfaceVisibility:"hidden" }}
+                    onClick={() => setFlowIdx(flowIdx)}
+                    onMouseEnter={() => setFlowPaused(true)}
+                    onMouseLeave={() => setFlowPaused(false)}
+                  >
+                    <div className="w-[290px] sm:w-[360px] rounded-[24px] p-[24px] sm:p-[28px] border"
+                      style={{
+                        background: "linear-gradient(170deg, rgba(23,48,76,0.98), rgba(8,24,44,0.98))",
+                        borderColor: "rgba(0,210,255,0.25)",
+                        boxShadow: "0 20px 70px rgba(0,210,255,0.13)",
+                      }}
+                    >
+                      <div className="flex items-start justify-between">
+                        <div className="text-[32px]">{item.emoji}</div>
+                        <div className="text-[10px] tracking-widest font-[700] px-2 py-1 rounded-full"
+                          style={{ background:`${colors.aqua}1d`, color:colors.aqua, border:`1px solid ${colors.aqua}33` }}>
+                          {item.tag}
+                        </div>
+                      </div>
+                      <p className="mt-[18px] text-[16px] sm:text-[18px] leading-relaxed font-[600] text-white/92">
+                        Did you know…
+                      </p>
+                      <p className="mt-1 text-[16px] sm:text-[18px] leading-relaxed text-white/82">
+                        {item.fact}
+                      </p>
+                      <div className="mt-5 text-[11.6px] text-white/44 flex items-center gap-2">
+                        <span className="h-[5px] w-[5px] rounded-full bg-[#00D2FF]" />
+                        GARDEN ROUTE PLUMBING CO.
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })()}
             </div>
             <div className="flex justify-center gap-2 mt-8">
               {flowFacts.map((_, i) => (
