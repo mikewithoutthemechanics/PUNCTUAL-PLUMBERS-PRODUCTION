@@ -37,7 +37,6 @@ const services = [
   { id:"geyser", icon:"🔥", title:"Geyser Repairs", desc:"Burst geyser, we’re here for you. Full replacements and repairs.", micro:"flame hum", color:"#f59e0b"},
   { id:"drain", icon:"🧹", title:"Drain Cleaning", desc:"High-pressure jetting. Roots from forest properties cleared – camera verified.", micro:"swirl", color:"#1E8449"},
   { id:"filter", icon:"💧", title:"Water Filtration", desc:"Tank, borehole & municipal. Garden Route water – pure, mineral balanced.", micro:"drop", color:"#00D2FF"},
-  { id:"maint", icon:"🏠", title:"Maintenance Plans", desc:"Set up routine maintenance for your coastal home. Perfect for your holiday homes, when you cannot be there we will.", micro:"shield", color:"#1E8449"},
   { id:"emerg", icon:"🚨", title:"Emergency Callouts", desc:"True 24/7. Average 38min response inside route corridor. Live GPS dispatch.", micro:"blink", color:"#ff4d6d"},
 ];
 
@@ -423,9 +422,9 @@ export default function App() {
       </section>
 
       {/* Scene 2 – Services */}
-      <section className="relative py-20 sm:py-28" style={{ background:`linear-gradient(180deg, ${colors.charcoal} 0%, ${colors.charcoal2} 100%)` }}>
+      <section className="relative py-14 sm:py-20" style={{ background:`linear-gradient(180deg, ${colors.charcoal} 0%, ${colors.charcoal2} 100%)` }}>
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-6">
             <div>
             <h2 className="display text-[34px] sm:text-[48px] font-[800] mt-3">What we can do for you.</h2>
             </div>
@@ -434,7 +433,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[16px] sm:gap-[20px]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[14px] sm:gap-[20px]">
             {services.map((s,idx)=>(
               <motion.div
                 key={s.id}
@@ -846,9 +845,8 @@ export default function App() {
                     <option>Emergency</option>
                     <option>Quote / Renovation</option>
                     <option>Geyser / Hot Water</option>
-                    <option>Leak detection</option>
-                    <option>Maintenance plan</option>
-                  </select>
+<option>Leak detection</option>
+                   </select>
                 </div>
                 <textarea placeholder="Describe issue – photos welcome via WhatsApp after submit" rows={3}
                   className="w-full rounded-[12px] border border-[#c9d8e4] px-[13px] py-[12px] text-[14px] bg-white outline-none focus:border-[#00bde6]"/>
