@@ -32,7 +32,7 @@ const gardenImages = {
 const services = [
   { id:"plumbing", icon:"🔧", title:"General Plumbing", desc:"Full residential & commercial systems. Precision joints, pressure balance, forever-fit finishes.", micro:"wrench spin", color:"#00D2FF"},
   { id:"bath", icon:"🚿", title:"Bathroom Renovations", desc:"Bathroom remodels, sauna installations, leak free guarentee.", micro:"shower mist", color:"#22c55e"},
-  { id:"leak", icon:"🌊", title:"Leak Detection", desc:"Thermal, acoustic & tracer gas. Pinpoint leaks behind Knysna stone walls, no guesswork.", micro:"pulse sonar", color:"#00D2FF"},
+  { id:"leak", icon:"🌊", title:"Leak Detection", desc:"Fast and accurate leak detection. Quick repair, satisfation guarantee.", micro:"pulse sonar", color:"#00D2FF"},
   { id:"install", icon:"🏗️", title:"New Installations", desc:"Coastal-grade copper & PEX. Salt air rated fittings for homes from Hartenbos to Plett.", micro:"pipe connect", color:"#CD7F32"},
   { id:"geyser", icon:"🔥", title:"Geyser Repairs", desc:"Burst geysers at 2am? We’re there. Full replacements & load-shedding smart timers.", micro:"flame hum", color:"#f59e0b"},
   { id:"drain", icon:"🧹", title:"Drain Cleaning", desc:"High-pressure jetting. Roots from forest properties cleared – camera verified.", micro:"swirl", color:"#1E8449"},
