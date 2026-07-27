@@ -832,7 +832,7 @@ export default function App() {
             </div>
             <div className="rounded-[24px] bg-white text-[#1b2d3d] p-[20px] sm:p-[26px] shadow-[0_28px_80px_rgba(0,0,0,0.32)]">
               <div className="text-[13.3px] font-[750]" style={{ color: colors.ocean }}>Free Garden Route assessment</div>
-              <form className="mt-4 grid gap-[12px]" onSubmit={e=>{e.preventDefault(); alert("Thank you! A Punctual Plumbers dispatcher will WhatsApp you within 9 minutes.")}}>
+              <form className="mt-4 grid gap-[12px]" onSubmit={e=>{e.preventDefault(); alert("Thank you!")}}>
                 <div className="grid sm:grid-cols-2 gap-[12px]">
                   <input required placeholder="Name" className="w-full rounded-[12px] border border-[#c9d8e4] px-[13px] py-[12px] text-[14px] bg-white outline-none focus:border-[#00bde6]"/>
                   <input required placeholder="WhatsApp / Phone" className="w-full rounded-[12px] border border-[#c9d8e4] px-[13px] py-[12px] text-[14px] bg-white outline-none focus:border-[#00bde6]"/>
@@ -852,7 +852,7 @@ export default function App() {
                   className="w-full rounded-[12px] border border-[#c9d8e4] px-[13px] py-[12px] text-[14px] bg-white outline-none focus:border-[#00bde6]"/>
                 <button className="w-full py-[13px] rounded-[14px] font-[750] text-[15px] text-[#042535]"
                   style={{ background:`linear-gradient(120deg, ${colors.aqua}, #82faff)`}}>
-                  Send – I’ll reply within 9 min 💧
+                  Send
                 </button>
                 <div className="text-[11.6px] text-[#5a7084] text-center">Zero call-out if we do the job • COC included • PIRB 3419</div>
               </form>
