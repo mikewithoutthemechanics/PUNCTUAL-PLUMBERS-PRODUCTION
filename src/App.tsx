@@ -37,7 +37,7 @@ const services = [
   { id:"geyser", icon:"🔥", title:"Geyser Repairs", desc:"Burst geyser, we’re here for you. Full replacements and repairs.", micro:"flame hum", color:"#f59e0b"},
   { id:"drain", icon:"🧹", title:"Drain Cleaning", desc:"High-pressure jetting. Roots from forest properties cleared – camera verified.", micro:"swirl", color:"#1E8449"},
   { id:"filter", icon:"💧", title:"Water Filtration", desc:"Tank, borehole & municipal. Garden Route water – pure, mineral balanced.", micro:"drop", color:"#00D2FF"},
-  { id:"maint", icon:"🏠", title:"Maintenance Plans", desc:"Paradise Protection Plan™. Bi-annual health checks, priority response, 15% member rates.", micro:"shield", color:"#1E8449"},
+  { id:"maint", icon:"🏠", title:"Maintenance Plans", desc:"Set up routine maintenance for your coastal home. Perfect for your holiday homes, when you cannot be there we will.", micro:"shield", color:"#1E8449"},
   { id:"emerg", icon:"🚨", title:"Emergency Callouts", desc:"True 24/7. Average 38min response inside route corridor. Live GPS dispatch.", micro:"blink", color:"#ff4d6d"},
 ];
 
