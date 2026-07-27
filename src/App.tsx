@@ -96,13 +96,15 @@ export default function App() {
     { emoji:"🌿", fact:"70% of Plett homes have undetected forest root intrusions in drainage. Camera inspect.", tag:"ROOTS" },
     { emoji:"🛡️", fact:"Our 7-year workmanship guarantee is the longest on the Garden Route. We stand by it.", tag:"GUARANTEE" },
   ];
-  const [flowIdx, setFlowIdx] = useState(0);
+  const [flowIdx, setFlowIdx] = useState(1);
   const [flowPaused, setFlowPaused] = useState(false);
   useEffect(() => {
     if (flowPaused) return;
-    const id = setInterval(() => setFlowIdx(i => (i + 1) % flowFacts.length), 4200);
+    const id = setInterval(() => setFlowIdx(i => i >= paddedFlow.length - 2 ? 1 : i + 1), 4200);
     return () => clearInterval(id);
   }, [flowPaused]);
+
+  const paddedFlow = useMemo(() => [flowFacts[flowFacts.length - 1], ...flowFacts, flowFacts[0]], [flowFacts]);
 
   // Water calculator
   const [people, setPeople] = useState(3);
@@ -485,7 +487,7 @@ export default function App() {
           </div>
           <div className="mt-12 relative" style={{ perspective:"1300px" }}>
             <div className="relative h-[340px] sm:h-[380px] flex items-center justify-center">
-              {flowFacts.map((item, i) => {
+              {paddedFlow.map((item, i) => {
                 const diff = i - flowIdx;
                 const abs = Math.abs(diff);
                 const sign = Math.sign(diff) || 1;
@@ -510,8 +512,10 @@ export default function App() {
                       style={{
                         background: isCenter
                           ? "linear-gradient(170deg, rgba(23,48,76,0.98), rgba(8,24,44,0.98))"
-                          : "linear-gradient(170deg, rgba(255,255,255,0.038), rgba(255,255,255,0.016))",
-                        borderColor: isCenter ? "rgba(0,210,255,0.25)" : "rgba(255,255,255,0.085)",
+                          : "linear-gradient(170deg, rgba(10,22,40,0.94), rgba(8,18,34,0.94))",
+                        borderColor: isCenter
+                          ? "rgba(0,210,255,0.25)"
+                          : "rgba(255,255,255,0.13)",
                         boxShadow: isCenter ? "0 20px 70px rgba(0,210,255,0.13)" : "none",
                       }}
                     >
@@ -539,21 +543,21 @@ export default function App() {
             </div>
             <div className="flex justify-center gap-2 mt-8">
               {flowFacts.map((_, i) => (
-                <button key={i} onClick={() => setFlowIdx(i)}
+                <button key={i} onClick={() => setFlowIdx(i + 1)}
                   className="h-[7px] rounded-full transition-all"
                   style={{
-                    width: i === flowIdx ? 32 : 7,
-                    background: i === flowIdx ? colors.aqua : "rgba(255,255,255,0.2)",
+                    width: i + 1 === flowIdx ? 32 : 7,
+                    background: i + 1 === flowIdx ? colors.aqua : "rgba(255,255,255,0.2)",
                   }}
                   aria-label={`Fact ${i + 1}`}
                 />
               ))}
             </div>
-            <button onClick={() => setFlowIdx(i => (i - 1 + flowFacts.length) % flowFacts.length)}
+            <button onClick={() => setFlowIdx(i => i <= 1 ? paddedFlow.length - 2 : i - 1)}
               className="absolute left-1 sm:left-3 top-1/2 -translate-y-1/2 w-[40px] h-[40px] rounded-full flex items-center justify-center text-white/60 text-[22px] border border-white/12 bg-black/30 hover:bg-black/50 hover:text-white transition z-10 backdrop-blur-sm">
               ‹
             </button>
-            <button onClick={() => setFlowIdx(i => (i + 1) % flowFacts.length)}
+            <button onClick={() => setFlowIdx(i => i >= paddedFlow.length - 2 ? 1 : i + 1)}
               className="absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 w-[40px] h-[40px] rounded-full flex items-center justify-center text-white/60 text-[22px] border border-white/12 bg-black/30 hover:bg-black/50 hover:text-white transition z-10 backdrop-blur-sm">
               ›
             </button>
