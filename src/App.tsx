@@ -30,14 +30,14 @@ const gardenImages = {
 };
 
 const services = [
-  { id:"plumbing", icon:"🔧", title:"General Plumbing", desc:"Full residential & commercial systems. Precision joints, pressure balance, forever-fit finishes.", micro:"wrench spin", color:"#00D2FF"},
-  { id:"bath", icon:"🚿", title:"Bathroom Renovations", desc:"Bathroom remodels, sauna installations, leak free guarentee.", micro:"shower mist", color:"#22c55e"},
-  { id:"leak", icon:"🌊", title:"Leak Detection", desc:"Fast and accurate leak detection. Quick repair, satisfation guarantee.", micro:"pulse sonar", color:"#00D2FF"},
-  { id:"install", icon:"🏗️", title:"New Installations", desc:"Coastal-grade copper & PEX. Salt air rated fittings for homes from Hartenbos to Plett.", micro:"pipe connect", color:"#CD7F32"},
-  { id:"geyser", icon:"🔥", title:"Geyser Repairs", desc:"Burst geyser, we’re here for you. Full replacements and repairs.", micro:"flame hum", color:"#f59e0b"},
-  { id:"drain", icon:"🧹", title:"Drain Cleaning", desc:"High-pressure jetting. Roots from forest properties cleared – camera verified.", micro:"swirl", color:"#1E8449"},
-  { id:"filter", icon:"💧", title:"Water Filtration", desc:"Tank, borehole & municipal. Garden Route water – pure, mineral balanced.", micro:"drop", color:"#00D2FF"},
-  { id:"emerg", icon:"🚨", title:"Emergency Callouts", desc:"True 24/7. Average 38min response inside route corridor. Live GPS dispatch.", micro:"blink", color:"#ff4d6d"},
+  { id:"plumbing", icon:"🔧", title:"General Plumbing", desc:"Full residential & commercial systems. Precision joints, pressure balance, forever-fit finishes.", color:"#00D2FF"},
+  { id:"bath", icon:"🚿", title:"Bathroom Renovations", desc:"Bathroom remodels, sauna installations, leak free guarentee.", color:"#22c55e"},
+  { id:"leak", icon:"🌊", title:"Leak Detection", desc:"Fast and accurate leak detection. Quick repair, satisfation guarantee.", color:"#00D2FF"},
+  { id:"install", icon:"🏗️", title:"New Installations", desc:"Coastal-grade copper & PEX. Salt air rated fittings for homes from Hartenbos to Plett.", color:"#CD7F32"},
+  { id:"geyser", icon:"🔥", title:"Geyser Repairs", desc:"Burst geyser, we’re here for you. Full replacements and repairs.", color:"#f59e0b"},
+  { id:"drain", icon:"🧹", title:"Drain Cleaning", desc:"High-pressure jetting. Roots from forest properties cleared – camera verified.", color:"#1E8449"},
+  { id:"filter", icon:"💧", title:"Water Filtration", desc:"Tank, borehole & municipal. Garden Route water – pure, mineral balanced.", color:"#00D2FF"},
+  { id:"emerg", icon:"🚨", title:"Emergency Callouts", desc:"True 24/7. Average 38min response inside route corridor. Live GPS dispatch.", color:"#ff4d6d"},
 ];
 
 const serviceTowns = [
@@ -454,12 +454,7 @@ a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-ou
                   transition:"all .34s cubic-bezier(.22,1,.36,1)"
                 }}
               >
-                {/* micro animation dot */}
-                <div className="flex items-start justify-between">
-                  <div className="text-[30px]">{s.icon}</div>
-                  <div className="text-[10px] tracking-widest font-[700] px-2 py-1 rounded-full"
-                       style={{ background:`${s.color}1d`, color:s.color, border:`1px solid ${s.color}33` }}>{s.micro.toUpperCase()}</div>
-                </div>
+                <div className="text-[30px]">{s.icon}</div>
                 <div className="mt-4 display text-[19px] font-[750] tracking-[-0.01em] text-white">{s.title}</div>
                 <p className="mt-[10px] text-[13.4px] leading-relaxed text-white/66">{s.desc}</p>
                 {/* animated copper pipe accent */}
