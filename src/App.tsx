@@ -496,11 +496,10 @@ export default function App() {
                 const scale = isCenter ? 1 : Math.max(0.45, 0.85 - (abs - 1) * 0.18);
                 const rotateY = isCenter ? 0 : sign * (abs === 1 ? -22 : -40);
                 const z = isCenter ? 0 : -(abs * 60);
-                const opacity = isCenter ? 1 : Math.max(0, 0.7 - (abs - 1) * 0.2);
                 return (
                   <motion.div
                     key={i}
-                    animate={{ x, scale, rotateY, z, opacity }}
+                    animate={{ x, scale, rotateY, z }}
                     transition={{ duration:0.6, ease:[0.22,1,0.36,1] }}
                     className="absolute cursor-pointer"
                     style={{ transformStyle:"preserve-3d", backfaceVisibility:"hidden" }}
