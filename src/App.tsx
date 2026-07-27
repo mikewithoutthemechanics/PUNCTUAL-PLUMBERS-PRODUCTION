@@ -779,10 +779,7 @@ a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-ou
                   <div className="text-[11px] text-white/55">CO₂ avoided</div>
                 </div>
               </div>
-              <div className="mt-4 flex gap-2">
-                <button className="px-[16px] py-[10px] rounded-full text-[12.8px] font-[700] text-[#062535]" style={{ background: colors.aqua }}>Share savings card →</button>
-                <button className="px-[16px] py-[10px] rounded-full text-[12.8px] text-white/80 border border-white/15">Book water audit</button>
-              </div>
+
             </div>
 
           </div>
