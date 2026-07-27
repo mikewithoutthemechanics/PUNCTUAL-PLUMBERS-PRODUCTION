@@ -261,17 +261,6 @@ export default function App() {
 
         {/* Floating coastal text */}
         <motion.div style={{ opacity: heroOpacity }} className="relative z-10 h-full mx-auto max-w-[1250px] px-5 sm:px-7 flex flex-col justify-center pt-[88px]">
-          <motion.div
-            initial={{ opacity:0, y:34 }}
-            animate={{ opacity:1, y:0 }}
-            transition={{ delay:0.22, duration:0.9, ease:[0.22,1,0.36,1] }}
-            className="inline-flex w-fit items-center gap-2 rounded-full border border-[#00D2FF33] bg-[#08192b99] px-3 py-[7px] text-[11.5px] tracking-wider font-[600] text-[#aef2ff]"
-            style={{ backdropFilter:"blur(10px)"}}
-          >
-            <span className="h-[6px] w-[6px] rounded-full bg-[#00D2FF]" style={{ animation:"ripplePulse 1.9s infinite"}} />
-            LIVE DISPATCH • 9 VANS TODAY • 24/7
-          </motion.div>
-
           <div className="mt-6 sm:mt-8 max-w-[980px]">
             <h1 className="display text-[44px] sm:text-[64px] lg:text-[84px] leading-[0.89] font-[800] tracking-[-0.022em] text-white"
                 style={{ textShadow:"0 18px 55px rgba(0,0,0,.52)"}}>
@@ -363,18 +352,7 @@ export default function App() {
             </motion.div>
           </div>
 
-          {/* scroll hint */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-[10.5px] tracking-widest text-white/46">
-            SCROLL THE ROUTE
-            <div className="mx-auto mt-[7px] w-[24px] h-[38px] rounded-full border border-white/28 flex justify-center pt-2">
-              <motion.div
-                animate={{ y:[0,8,0] }}
-                transition={{ repeat: Infinity, duration:1.7 }}
-                className="h-[7px] w-[3.5px] rounded-full bg-white/70"
-              />
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
         {/* bottom fade into charcoal */}
         <div className="absolute bottom-0 left-0 right-0 h-[200px] pointer-events-none"
           style={{ background:"linear-gradient(180deg, rgba(26,26,46,0) 0%, #1A1A2E 82%)" }} />
