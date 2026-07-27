@@ -847,7 +847,7 @@ a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-ou
                   style={{ background:`linear-gradient(120deg, ${colors.aqua}, #82faff)`}}>
                   Send
                 </button>
-                <div className="text-[11.6px] text-[#5a7084] text-center">Zero call-out if we do the job • COC included • PIRB 3419</div>
+                
               </form>
             </div>
           </div>
