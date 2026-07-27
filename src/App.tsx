@@ -34,7 +34,7 @@ const services = [
   { id:"bath", icon:"🚿", title:"Bathroom Renovations", desc:"Bathroom remodels, sauna installations, leak free guarentee.", micro:"shower mist", color:"#22c55e"},
   { id:"leak", icon:"🌊", title:"Leak Detection", desc:"Fast and accurate leak detection. Quick repair, satisfation guarantee.", micro:"pulse sonar", color:"#00D2FF"},
   { id:"install", icon:"🏗️", title:"New Installations", desc:"Coastal-grade copper & PEX. Salt air rated fittings for homes from Hartenbos to Plett.", micro:"pipe connect", color:"#CD7F32"},
-  { id:"geyser", icon:"🔥", title:"Geyser Repairs", desc:"Burst geysers at 2am? We’re there. Full replacements & load-shedding smart timers.", micro:"flame hum", color:"#f59e0b"},
+  { id:"geyser", icon:"🔥", title:"Geyser Repairs", desc:"Burst geyser, we’re here for you. Full replacements and repairs.", micro:"flame hum", color:"#f59e0b"},
   { id:"drain", icon:"🧹", title:"Drain Cleaning", desc:"High-pressure jetting. Roots from forest properties cleared – camera verified.", micro:"swirl", color:"#1E8449"},
   { id:"filter", icon:"💧", title:"Water Filtration", desc:"Tank, borehole & municipal. Garden Route water – pure, mineral balanced.", micro:"drop", color:"#00D2FF"},
   { id:"maint", icon:"🏠", title:"Maintenance Plans", desc:"Paradise Protection Plan™. Bi-annual health checks, priority response, 15% member rates.", micro:"shield", color:"#1E8449"},
