@@ -469,9 +469,6 @@ a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-ou
             ))}
           </div>
 
-          <div className="mt-8 text-[12.5px] text-white/52">
-            All work PIRB certified • Coastal copper • SANS 10252 • COC issued same day
-          </div>
         </div>
       </section>
 
@@ -898,8 +895,7 @@ a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-ou
           </div>
         </div>
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7 mt-10 pt-6 border-t border-white/[0.075] text-[11.6px] text-white/42 flex flex-col sm:flex-row justify-between gap-3">
-          <div>© 2009–2026 Punctual Plumbers (Pty) Ltd • “Precision Plumbing. Paradise Protected.”</div>
-          <div>Built Garden Route strong • COC issued digitally • Load-shedding resilient scheduling</div>
+          <div>© 2009–2026 Punctual Plumbers (Pty) Ltd</div>
         </div>
       </footer>
 
