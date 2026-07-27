@@ -486,13 +486,8 @@ export default function App() {
             <h2 className="display text-[34px] sm:text-[48px] font-[800] mt-3 text-white">Water wisdom from the Route.</h2>
           </div>
           <div className="mt-12 relative" style={{ perspective:"1300px" }}>
-            <div className="relative h-[340px] sm:h-[380px] flex items-center justify-center">
-              {paddedFlow.map((_, sortIdx) => sortIdx).sort((a, b) => {
-                const absA = Math.abs(a - flowIdx);
-                const absB = Math.abs(b - flowIdx);
-                return absA - absB;
-              }).map(i => {
-                const item = paddedFlow[i];
+            <div className="relative h-[340px] sm:h-[380px] flex items-center justify-center" style={{ transformStyle:"preserve-3d" }}>
+              {paddedFlow.map((item, i) => {
                 const diff = i - flowIdx;
                 const abs = Math.abs(diff);
                 const sign = Math.sign(diff) || 1;
@@ -501,13 +496,14 @@ export default function App() {
                 const scale = isCenter ? 1 : Math.max(0.45, 0.85 - (abs - 1) * 0.18);
                 const rotateY = isCenter ? 0 : sign * (abs === 1 ? -22 : -40);
                 const z = isCenter ? 0 : -(abs * 60);
+                const zIndex = isCenter ? 50 : Math.max(10, 50 - abs * 8);
                 return (
                   <motion.div
                     key={i}
                     animate={{ x, scale, rotateY, z }}
                     transition={{ duration:0.6, ease:[0.22,1,0.36,1] }}
                     className="absolute cursor-pointer"
-                    style={{ transformStyle:"preserve-3d", backfaceVisibility:"hidden" }}
+                    style={{ backfaceVisibility:"hidden", zIndex }}
                     onClick={() => setFlowIdx(i)}
                     onMouseEnter={() => setFlowPaused(true)}
                     onMouseLeave={() => setFlowPaused(false)}
