@@ -4,3 +4,10 @@ dist
 *.local
 
 .vercel
+
+mobile/node_modules
+mobile/dist
+mobile/.vite
+mobile/.vercel
+mobile/*.local
+
