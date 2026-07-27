@@ -486,7 +486,7 @@ export default function App() {
             <h2 className="display text-[34px] sm:text-[48px] font-[800] mt-3 text-white">Water wisdom from the Route.</h2>
           </div>
           <div className="mt-12 relative" style={{ perspective:"1300px" }}>
-            <div className="relative h-[340px] sm:h-[380px] flex items-center justify-center" style={{ transformStyle:"preserve-3d" }}>
+            <div className="relative h-[340px] sm:h-[380px] flex items-center justify-center">
               {paddedFlow.map((item, i) => {
                 const diff = i - flowIdx;
                 const abs = Math.abs(diff);
@@ -496,14 +496,14 @@ export default function App() {
                 const scale = isCenter ? 1 : Math.max(0.45, 0.85 - (abs - 1) * 0.18);
                 const rotateY = isCenter ? 0 : sign * (abs === 1 ? -22 : -40);
                 const z = isCenter ? 0 : -(abs * 60);
-                const zIndex = isCenter ? 50 : Math.max(10, 50 - abs * 8);
+                const opacity = isCenter ? 1 : Math.max(0, 0.7 - (abs - 1) * 0.2);
                 return (
                   <motion.div
                     key={i}
-                    animate={{ x, scale, rotateY, z }}
+                    animate={{ x, scale, rotateY, z, opacity }}
                     transition={{ duration:0.6, ease:[0.22,1,0.36,1] }}
                     className="absolute cursor-pointer"
-                    style={{ backfaceVisibility:"hidden", zIndex }}
+                    style={{ transformStyle:"preserve-3d", backfaceVisibility:"hidden" }}
                     onClick={() => setFlowIdx(i)}
                     onMouseEnter={() => setFlowPaused(true)}
                     onMouseLeave={() => setFlowPaused(false)}
