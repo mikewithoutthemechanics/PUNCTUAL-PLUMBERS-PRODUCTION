@@ -382,7 +382,7 @@ export default function App() {
             transition={{ duration:0.78 }}
             className="max-w-[900px]"
           >
-            <div className="text-[11.5px] tracking-[0.22em] text-[#7ff0ff] font-[700]">SCENE I — THE ROUTE</div>
+
             <h2 className="display mt-4 text-[34px] sm:text-[52px] lg:text-[60px] leading-[0.97] font-[800]">
               The Garden Route deserves<br/>plumbing as beautiful as the place.
             </h2>
@@ -427,8 +427,7 @@ export default function App() {
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
             <div>
-              <div className="text-[11.5px] tracking-[0.22em] text-[#7ff0ff] font-[700]">SCENE II — WHAT WE DO</div>
-              <h2 className="display text-[34px] sm:text-[48px] font-[800] mt-3">What we can do for you.</h2>
+            <h2 className="display text-[34px] sm:text-[48px] font-[800] mt-3">What we can do for you.</h2>
             </div>
             <div className="text-[14.7px] text-white/65 max-w-[520px]">
               Coastal-grade materials, copper artistry, and thermal diagnostics. Every job photographed, COC’d and guaranteed.
@@ -481,8 +480,7 @@ export default function App() {
       <section className="relative py-20 sm:py-28 overflow-hidden" style={{ background:`linear-gradient(180deg, ${colors.charcoal2} 0%, ${colors.oceanDeep} 100%)` }}>
         <div className="absolute inset-0 opacity-[0.06] water-grid pointer-events-none" />
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
-          <div className="max-w-[720px]">
-            <div className="text-[11.5px] tracking-[0.22em] text-[#7ff0ff] font-[700]">DID YOU KNOW? — 3D COVERFLOW</div>
+            <div className="max-w-[720px]">
             <h2 className="display text-[34px] sm:text-[48px] font-[800] mt-3 text-white">Water wisdom from the Route.</h2>
           </div>
           <div className="mt-12 relative" style={{ perspective:"1300px" }}>
@@ -569,7 +567,6 @@ export default function App() {
       <section className="py-20 sm:py-24" style={{ background: colors.charcoal }}>
         <div className="mx-auto max-w-[1100px] px-5 sm:px-7">
           <div className="text-center max-w-[750px] mx-auto">
-            <div className="text-[11.5px] tracking-[0.22em] text-[#7ff0ff] font-[700]">BEFORE / AFTER CINEMA</div>
             <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3">Drag the water line.</h3>
             <p className="text-white/68 mt-3 text-[15.5px]">Knysna lagoon cottage – full copper re-pipe + designer bath. 11 days, zero dust in living areas.</p>
           </div>
@@ -620,7 +617,6 @@ export default function App() {
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
-              <div className="text-[11.5px] tracking-[0.22em] font-[800]" style={{ color: colors.green }}>SOCIAL PROOF — CINEMATIC</div>
               <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3" style={{ color: colors.ocean }}>Garden Route homeowners, unfiltered.</h3>
             </div>
             <div className="text-[13.8px] text-[#355269]">⭐⭐⭐⭐⭐ 4.9 average • 312 Google reviews • video verified</div>
@@ -684,8 +680,7 @@ export default function App() {
       {/* Map */}
       <section id="coverage" className="py-20 sm:py-28" style={{ background: colors.oceanDeep }}>
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
-          <div className="max-w-[780px]">
-            <div className="text-[11.5px] tracking-[0.22em] text-[#7ff0ff] font-[700]">AREA COVERAGE — INTERACTIVE ROUTE MAP</div>
+            <div className="max-w-[780px]">
             <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3">
               Wherever you are on the Garden Route — we're already nearby.
             </h3>
@@ -758,8 +753,7 @@ export default function App() {
       <section id="journal" className="py-20 sm:py-28" style={{ background: colors.charcoal }}>
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
           <div className="text-center max-w-[820px] mx-auto">
-            <div className="text-[11.5px] tracking-[0.22em] text-[#7ff0ff] font-[700]">BONUS — VIRAL TOOLS</div>
-            <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3">Plumbing that’s actually fun.</h3>
+            <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3">Plumbing that's actually fun.</h3>
             <p className="text-white/68 mt-3 text-[15.7px]">Built to be shared. Built to save you money.</p>
           </div>
 
