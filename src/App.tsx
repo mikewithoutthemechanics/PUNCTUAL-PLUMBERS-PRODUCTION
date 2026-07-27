@@ -96,8 +96,9 @@ export default function App() {
     { emoji:"🌿", fact:"70% of Plett homes have undetected forest root intrusions in drainage. Camera inspect.", tag:"ROOTS" },
     { emoji:"🛡️", fact:"Our 7-year workmanship guarantee is the longest on the Garden Route. We stand by it.", tag:"GUARANTEE" },
   ];
-  const [flowIdx, setFlowIdx] = useState(1);
-  const [flowPaused, setFlowPaused] = useState(false);
+const [flowIdx, setFlowIdx] = useState(1);
+   const [flowPaused, setFlowPaused] = useState(false);
+   const touchStartRef = useRef(0);
   useEffect(() => {
     if (flowPaused) return;
     const id = setInterval(() => setFlowIdx(i => i >= paddedFlow.length - 2 ? 1 : i + 1), 4200);
@@ -486,7 +487,15 @@ export default function App() {
             <h2 className="display text-[34px] sm:text-[48px] font-[800] mt-3 text-white">Water wisdom from the Route.</h2>
           </div>
           <div className="mt-12 relative" style={{ perspective:"1300px" }}>
-            <div className="relative h-[340px] sm:h-[380px] flex items-center justify-center" style={{ transformStyle:"preserve-3d" }}>
+            <div className="relative h-[340px] sm:h-[380px] flex items-center justify-center" style={{ transformStyle:"preserve-3d" }}
+              onTouchStart={(e) => { setFlowPaused(true); touchStartRef.current = e.touches[0].clientX; }}
+              onTouchEnd={(e) => {
+                const diff = touchStartRef.current - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                  setFlowIdx(i => diff > 0 ? (i >= paddedFlow.length - 2 ? 1 : i + 1) : (i <= 1 ? paddedFlow.length - 2 : i - 1));
+                }
+                setFlowPaused(false);
+              }}>
               {paddedFlow.map((item, i) => {
                 const diff = i - flowIdx;
                 const abs = Math.abs(diff);
