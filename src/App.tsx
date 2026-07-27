@@ -41,14 +41,6 @@ const services = [
   { id:"emerg", icon:"🚨", title:"Emergency Callouts", desc:"True 24/7. Average 38min response inside route corridor. Live GPS dispatch.", micro:"blink", color:"#ff4d6d"},
 ];
 
-const processSteps = [
-  { n:"01", t:"Call or WhatsApp", d:"Live plumber answers, not a call centre. Emergency triage in 90 seconds.", icon:"📞", color:"#00D2FF"},
-  { n:"02", t:"Free Assessment", d:"On-site or video walkthrough. Thermal scan included on first visit.", icon:"🔍", color:"#1E8449"},
-  { n:"03", t:"Transparent Quote", d:"Fixed pricing. No call-out fees if we do the job. Digital sign-off.", icon:"📋", color:"#CD7F32"},
-  { n:"04", t:"Expert Install", d:"Coastal-qualified teams, copper-certified. Dust sheets, shoe covers, clean leave.", icon:"🔧", color:"#22c55e"},
-  { n:"05", t:"Quality Guarantee", d:"7-year workmanship on installs. COC issued same day. Follow-up check at 30 days.", icon:"✅", color:"#00D2FF"},
-];
-
 const serviceTowns = [
   { name:"Mossel Bay", time:"22 min", lat: 71, lon: 18, quote:"Fixed our geyser burst at midnight. Legends." },
   { name:"Hartenbos", time:"26 min", lat: 66, lon: 23, quote:"So neat you’d never know they were here." },
@@ -565,49 +557,6 @@ export default function App() {
               className="absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 w-[40px] h-[40px] rounded-full flex items-center justify-center text-white/60 text-[22px] border border-white/12 bg-black/30 hover:bg-black/50 hover:text-white transition z-10 backdrop-blur-sm">
               ›
             </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Scene 3 – Process */}
-      <section id="process" className="relative py-20 sm:py-28" style={{ background: colors.sand, color:"#182233" }}>
-        <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
-          <div className="max-w-[810px]">
-            <div className="text-[11.5px] tracking-[0.22em] font-[800]" style={{ color: colors.green }}>SCENE III — OUR PROCESS</div>
-            <h2 className="display text-[34px] sm:text-[48px] font-[800] mt-3 tracking-[-0.017em]" style={{ color: colors.ocean }}>
-              Film-set discipline.<br/>Homeowner kindness.
-            </h2>
-          </div>
-
-          <div className="mt-14 relative">
-            {/* timeline line */}
-            <div className="hidden lg:block absolute left-[60px] top-[32px] bottom-[32px] w-[3px]"
-                 style={{
-                   background:`linear-gradient(180deg, ${colors.aqua}, ${colors.green}, ${colors.copper})`
-                 }} />
-            <div className="space-y-[34px]">
-              {processSteps.map((p,i)=>(
-                <motion.div
-                  key={p.n}
-                  initial={{ opacity:0, x: -18 }}
-                  whileInView={{ opacity:1, x:0 }}
-                  viewport={{ once:true }}
-                  transition={{ delay:i*0.08, duration:0.6 }}
-                  className="relative flex gap-6 lg:gap-10"
-                >
-                  <div className="hidden lg:flex flex-col items-center w-[120px] shrink-0">
-                    <div className="h-[58px] w-[58px] rounded-full flex items-center justify-center text-[24px] shadow-lg"
-                         style={{ background:"#fff", border:`2px solid ${p.color}44` }}>{p.icon}</div>
-                    <div className="mt-2 text-[11px] font-[800] tracking-wider" style={{ color:p.color }}>{p.n}</div>
-                  </div>
-                  <div className="flex-1 rounded-[20px] px-6 py-6 bg-white shadow-[0_8px_40px_rgba(10,61,98,0.070)] border border-[#0a3d620f]">
-                    <div className="lg:hidden text-[11px] font-[800] tracking-wider" style={{ color:p.color }}>{p.n} • {p.icon}</div>
-                    <div className="display text-[22px] font-[750]" style={{ color: colors.ocean }}>{p.t}</div>
-                    <div className="mt-[7px] text-[14.7px] text-[#3a4d60] max-w-[760px] leading-relaxed">{p.d}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
