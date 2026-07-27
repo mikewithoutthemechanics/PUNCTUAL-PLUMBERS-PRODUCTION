@@ -116,34 +116,7 @@ export default function App() {
     return { litres: saved*30, rand: rand, co2: Math.round(saved*0.018) };
   }, [people, showers, garden]);
 
-  // chatbot
-  const [chatOpen, setChatOpen] = useState(false);
-  const [chatInput, setChatInput] = useState("");
-  const [chatMsgs, setChatMsgs] = useState([
-    { who:"pipey", text:"Hi! I’m Pipey 💧 – GR Plumbing’s AI assistant. Ask: emergency rates, geyser warranty, or book now."}
-  ]);
 
-  const handleChatSend = () => {
-    if(!chatInput.trim()) return;
-    const q = chatInput;
-    setChatMsgs(m => [...m, { who:"you", text:q }]);
-    setChatInput("");
-    setTimeout(()=>{
-      const lc = q.toLowerCase();
-      let a = "Great question! Our dispatch will WhatsApp you in under 2 minutes with a fixed quote. Or call 083 237 9132 for immediate triage.";
-      if(lc.includes("emergency")||lc.includes("burst")||lc.includes("leak"))
-        a = "🚨 Emergency: Call 083 237 9132 – 24/7 live. Avg 38 min arrival on the Route. Shut main valve clockwise – I can guide you.";
-      else if(lc.includes("geyser"))
-        a = "Geyser replacement: R18,900–R36,500 incl. COC. Burst swaps same-day. 7-yr workmanship. Load-shedding smart timer included.";
-      else if(lc.includes("price")||lc.includes("cost")||lc.includes("quote"))
-a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-out if we work.";
-      else if(lc.includes("water"))
-        a = "Garden Route water-saving payback: 13–18 months, SANS compliant, EV-ready timers. Rebates available via our energy partner.";
-      else if(lc.includes("area")||lc.includes("where"))
-        a = "Mossel Bay → Storms River full corridor, incl. Wilderness, Knysna, Plett, George, Sedgefield. 9 dispatched vans daily.";
-      setChatMsgs(m => [...m, { who:"pipey", text:a }]);
-    }, 650);
-  };
 
   // testimonial carousel
   const [tIdx, setTIdx] = useState(0);
@@ -677,7 +650,7 @@ a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-ou
             </h3>
           </div>
 
-          <div className="mt-10 grid lg:grid-cols-[1.4fr_.85fr] gap-6">
+          <div className="mt-10 grid lg:grid-cols-1 gap-6">
             <div className="relative rounded-[26px] overflow-hidden border border-white/[0.096] bg-[#0a1930]">
               {/* stylised map */}
               <div className="relative h-[420px] sm:h-[500px] overflow-hidden">
@@ -722,20 +695,6 @@ a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-ou
                 ))}
               </div>
             </div>
-
-            <div className="rounded-[26px] border border-white/[0.094] bg-[#0c203a]/80 p-6">
-              <div className="text-[11px] tracking-wider text-[#87f0ff] font-[700]">LIVE PIN</div>
-              <div className="mt-2 display text-[26px] font-[800]">{mapActive.name}</div>
-              <div className="mt-1 text-[13.4px] text-white/72">Est. dispatch response: <span className="text-[#8efaff] font-[700]">{mapActive.time}</span></div>
-              <div className="mt-5 text-[15px] leading-relaxed text-white/82" style={{ fontFamily:"'Playfair Display', serif", fontStyle:"italic" }}>
-                “{mapActive.quote}”
-              </div>
-              <div className="mt-6 flex gap-2">
-                <a href="tel:+27832379132" className="px-[15px] py-[10px] rounded-full text-[13px] font-[700] text-[#05212f]" style={{ background: colors.aqua }}>Call local van</a>
-                <button className="px-[14px] py-[10px] rounded-full text-[12.6px] text-white/85 border border-white/15">WhatsApp pin</button>
-              </div>
-              <div className="mt-7 text-[11.7px] text-white/48">9 coverage vans • live GPS • route-optimized dispatch • PIRB verified tech sent</div>
-            </div>
           </div>
         </div>
       </section>
@@ -749,8 +708,8 @@ a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-ou
           </div>
 
           <div className="mt-12 grid lg:grid-cols-2 gap-[18px]">
-            {/* Water savings calculator */}
-            <div className="rounded-[24px] border border-white/[0.095] bg-[#111c31] p-[22px] sm:p-[28px]">
+            <div className="lg:col-span-2 flex justify-center">
+              <div className="rounded-[24px] border border-white/[0.095] bg-[#111c31] p-[22px] sm:p-[28px] w-full max-w-[560px]">
               <div className="text-[11px] tracking-widest text-[#7ef3ff] font-[700]">WATER SAVINGS CALCULATOR</div>
               <div className="display text-[24px] font-[800] mt-1">How much Garden Route water are you wasting?</div>
               <div className="mt-5 grid gap-4">
@@ -780,6 +739,7 @@ a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-ou
                 </div>
               </div>
 
+            </div>
             </div>
 
           </div>
@@ -891,47 +851,7 @@ a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-ou
         </div>
       </footer>
 
-      {/* Emergency sticky */}
-      <div className="fixed bottom-4 right-4 z-[70] hidden sm:block">
-        <div className="relative">
-          {/* drip */}
-          <motion.div
-            animate={{ y: [ -4, 16 ], opacity:[0,1,0] }}
-            transition={{ repeat:Infinity, duration:2.8, ease:"easeIn", repeatDelay:0.8 }}
-            className="absolute left-[26px] -top-[2px] text-[#00D2FF] text-[16px]"
-          >💧</motion.div>
-          <a href="tel:+27832379132"
-             className="group flex items-center gap-3 pl-[14px] pr-[4px] py-[6px] rounded-full shadow-[0_18px_50px_rgba(0,0,0,0.43)]"
-             style={{
-               background:"linear-gradient(135deg, rgba(14,28,49,0.95), rgba(7,18,33,0.98))",
-               border:"1px solid rgba(0,210,255,0.28)",
-               backdropFilter:"blur(14px)"
-             }}
-          >
-            <div className="relative">
-              <div className="h-[40px] w-[40px] rounded-full flex items-center justify-center text-[18px]"
-                style={{ background: `linear-gradient(135deg, #ff4d6d, #ff808a)`, animation:"ripplePulse 2.1s infinite" }}>
-                🚨
-              </div>
-            </div>
-            <div className="pr-3">
-              <div className="text-[10.5px] tracking-wider text-[#ff9aa9] font-[750]">EMERGENCY?</div>
-              <div className="text-[13.8px] font-[770] text-white leading-tight">Call Now</div>
-            </div>
-            <div className="hidden group-hover:block text-[11.7px] text-[#bdfaff] pr-[14px] border-l border-white/10 ml-1 pl-3">
-              083 237 9132<br/>
-              <span className="text-[10.5px] text-white/64">WhatsApp tap →</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      {/* mobile emergency bar */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-[70] px-3 pb-[14px]" style={{ paddingBottom:"calc(14px + env(safe-area-inset-bottom))"}}>
-        <a href="tel:+27832379132" className="block w-full text-center py-[14px] rounded-[16px] font-[800] text-[15px] text-[#061d29] shadow-2xl"
-          style={{ background:`linear-gradient(90deg, ${colors.aqua}, #7bfaff)`}}>
-          🚨 EMERGENCY? Call 083 237 9132 — 24/7
-        </a>
-      </div>
+
 
       {/* WhatsApp floating button */}
       <div className="fixed bottom-4 left-3 sm:left-5 z-[70]">
@@ -939,72 +859,19 @@ a = "Free on-site assessment across the Garden Route. Fixed quotes, zero call-ou
           href="https://wa.me/27832379132?text=Hi%20Punctual%20Plumbers%20-%20I%20need%20help%20with%20"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-2 rounded-full shadow-[0_18px_50px_rgba(0,0,0,0.43)] transition-all duration-300"
+          className="h-[52px] w-[52px] rounded-full flex items-center justify-center shadow-[0_18px_50px_rgba(0,0,0,0.43)] transition-all duration-300"
           style={{
             background:"linear-gradient(135deg, #25D366, #128C7E)",
             border:"1px solid rgba(255,255,255,0.15)",
           }}
         >
-          <div className="h-[48px] w-[48px] rounded-full flex items-center justify-center text-[24px] shrink-0">
-            <svg viewBox="0 0 24 24" className="h-[26px] w-[26px] fill-white">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-          </div>
-          <span className="max-w-0 group-hover:max-w-[160px] overflow-hidden transition-all duration-300 whitespace-nowrap text-[13px] font-[700] text-white">
-            WhatsApp us
-          </span>
+          <svg viewBox="0 0 24 24" className="h-[26px] w-[26px] fill-white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
         </a>
       </div>
 
-      {/* Pipey chatbot */}
-      <div className="fixed bottom-[88px] sm:bottom-[86px] right-4 z-[66]">
-        <AnimatePresence>
-          {chatOpen && (
-            <motion.div
-              initial={{ opacity:0, y:14, scale:0.97 }}
-              animate={{ opacity:1, y:0, scale:1 }}
-              exit={{ opacity:0, y:14, scale:0.97 }}
-              className="mb-3 w-[min(360px,calc(100vw-32px))] rounded-[22px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.52)] border border-white/[0.11]"
-              style={{ background:"rgba(12,22,39,0.98)", backdropFilter:"blur(18px)" }}
-            >
-              <div className="px-4 py-[13px] flex items-center justify-between" style={{ background:"linear-gradient(90deg, #0b2c48, #0a405b)"}}>
-                <div className="text-[13.5px] font-[750] text-white">🤖💧 Pipey — GR Plumbing AI</div>
-                <button onClick={()=>setChatOpen(false)} className="text-white/70 text-[13px]">✕</button>
-              </div>
-              <div className="h-[310px] overflow-y-auto px-3 py-3 space-y-2 text-[13px]">
-                {chatMsgs.map((m,i)=>(
-                  <div key={i} className={`max-w-[84%] px-3 py-[9px] rounded-[14px] leading-relaxed ${
-                    m.who==="pipey"
-                      ? "bg-white/[0.063] text-white/88 border border-white/[0.07]"
-                      : "ml-auto text-[#072532]"
-                  }`} style={ m.who==="you" ? { background: colors.aqua } : {}}>
-                    {m.text}
-                  </div>
-                ))}
-              </div>
-              <div className="p-[10px] border-t border-white/[0.075] flex gap-2">
-                <input
-                  value={chatInput}
-                  onChange={e=>setChatInput(e.target.value)}
-                  onKeyDown={e=> e.key==="Enter" && handleChatSend()}
-                  placeholder="Ask about geyser, pricing, areas..."
-                  className="flex-1 bg-[#16263a] border border-white/[0.10] rounded-[12px] px-3 py-[10px] text-[13px] text-white outline-none placeholder-white/40"
-                />
-                <button onClick={handleChatSend} className="px-[13px] py-[10px] rounded-[12px] text-[12.8px] font-[700] text-[#072432]" style={{ background: colors.aqua }}>Send</button>
-              </div>
-              <div className="px-3 pb-3 text-[10.7px] text-white/44">Pipey answers FAQs • live human takeover in &lt;2 min • Emergency? Call 083 237 9132</div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-        <button
-          onClick={()=>setChatOpen(o=>!o)}
-          className="h-[54px] w-[54px] rounded-full flex items-center justify-center text-[24px] shadow-[0_14px_40px_rgba(0,210,255,0.33)]"
-          style={{ background: `linear-gradient(145deg, ${colors.aqua}, #64f3ff)`}}
-          aria-label="Open Pipey chatbot"
-        >
-          💧
-        </button>
-      </div>
+
     </div>
   );
 }
