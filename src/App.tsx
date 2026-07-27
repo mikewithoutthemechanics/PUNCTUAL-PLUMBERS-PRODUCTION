@@ -359,7 +359,7 @@ export default function App() {
       </section>
 
       {/* Trust ribbon */}
-      <section className="relative z-20 -mt-[42px] pb-6">
+      <section className="relative z-20 mt-8 pb-6">
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
           <div className="rounded-[20px] px-4 sm:px-7 py-[16px] flex flex-wrap items-center justify-center sm:justify-between gap-4 text-[12.3px] sm:text-[13px]"
             style={{ background:"#101629", border:"1px solid rgba(255,255,255,0.073)", boxShadow:"0 20px 60px rgba(0,0,0,0.42)" }}>
