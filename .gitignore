@@ -11,3 +11,4 @@ mobile/.vite
 mobile/.vercel
 mobile/*.local
 
+.env*
