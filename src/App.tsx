@@ -54,7 +54,7 @@ const serviceTowns = [
 
 const testimonials = [
   { name:"Liezl van Rooyen", area:"Knysna Heads", text:"We redid our entire water system with GRP. Copper detailing is museum-level. Their respect for our lagoon home was incredible.", stars:5, avatar:"LV" },
-  { name:"André & Sanet Botha", area:"Wilderness Beach", text:"Burst main at 3:12am in a storm. They were at the door 27 minutes later. Paradise Protected is not marketing — it’s real.", stars:5, avatar:"AB" },
+  { name:"André & Sanet Botha", area:"Wilderness Beach", text:"Burst main at 3:12am in a storm. They were at the door 27 minutes later. 24/7 emergency response is not marketing — it’s real.", stars:5, avatar:"AB" },
   { name:"Michael Chen", area:"Plettenberg Bay", text:"Whole-house filtration + copper re-pipe. Water bill -64%, pressure perfect. They even sent Garden Route water quality reports.", stars:5, avatar:"MC" },
   { name:"Nandi Mbeki", area:"George", text:"Three plumbers failed to find the slab leak. GRP found it in 14 minutes with thermal. Saved our oak floors.", stars:5, avatar:"NM" },
 ];
@@ -237,7 +237,7 @@ export default function App() {
                 backgroundClip:"text",
                 color:"transparent"
               }}>Pure Water.</span><br/>
-              Paradise Protected.
+              Trusted Since 2009.
             </h1>
           </div>
 
@@ -738,7 +738,7 @@ export default function App() {
               <img src="/plumbers-logo.png" alt="Punctual Plumbers" className="h-[32px] w-auto" />
               <div>
                 <div className="display font-[800] text-white text-[14px] -mt-[2px]">Punctual Plumbers</div>
-                <div className="text-[11px] text-[#8feaff] tracking-wider -mt-[2px]">PARADISE PROTECTED</div>
+                <div className="text-[11px] text-[#8feaff] tracking-wider -mt-[2px]">SINCE 2009</div>
               </div>
             </div>
             <p className="mt-3 text-white/55 leading-relaxed">
