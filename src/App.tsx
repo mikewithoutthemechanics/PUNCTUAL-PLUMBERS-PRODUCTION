@@ -15,8 +15,7 @@ const colors = {
   slate: "#23364b",
 };
 
-const HERO_VIDEO = "https://videos.pexels.com/video-files/7109028/7109028-uhd_3840_2160_25fps.mp4";
-const WATER_TAP = "https://videos.pexels.com/video-files/29251309/12621376_1920_1080_30fps.mp4";
+const HERO_VIDEO = "https://videos.pexels.com/video-files/7109028/7109028-sd_640_360_25fps.mp4";
 
 const gardenImages = {
   knysna: "https://images.pexels.com/photos/38201192/pexels-photo-38201192.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1400",
@@ -55,7 +54,7 @@ const serviceTowns = [
 
 const testimonials = [
   { name:"Liezl van Rooyen", area:"Knysna Heads", text:"We redid our entire water system with GRP. Copper detailing is museum-level. Their respect for our lagoon home was incredible.", stars:5, avatar:"LV" },
-  { name:"André & Sanet Botha", area:"Wilderness Beach", text:"Burst main at 3:12am in a storm. They were at the door 27 minutes later. Paradise Protected is not marketing — it’s real.", stars:5, avatar:"AB" },
+  { name:"André & Sanet Botha", area:"Wilderness Beach", text:"Burst main at 3:12am in a storm. They were at the door 27 minutes later. 24/7 emergency response is not marketing — it’s real.", stars:5, avatar:"AB" },
   { name:"Michael Chen", area:"Plettenberg Bay", text:"Whole-house filtration + copper re-pipe. Water bill -64%, pressure perfect. They even sent Garden Route water quality reports.", stars:5, avatar:"MC" },
   { name:"Nandi Mbeki", area:"George", text:"Three plumbers failed to find the slab leak. GRP found it in 14 minutes with thermal. Saved our oak floors.", stars:5, avatar:"NM" },
 ];
@@ -220,7 +219,7 @@ export default function App() {
                 backgroundClip:"text",
                 color:"transparent"
               }}>Pure Water.</span><br/>
-              Paradise Protected.
+              Trusted Since 2009.
             </h1>
           </div>
 
@@ -284,7 +283,7 @@ export default function App() {
                   ))}
                 </div>
                 <div className="mt-4 rounded-[14px] overflow-hidden border border-white/[0.08]">
-                  <video src={WATER_TAP} autoPlay loop muted playsInline className="w-full h-[108px] object-cover opacity-90" />
+                  <div className="w-full h-[108px] relative overflow-hidden" style={{ background:"linear-gradient(180deg, rgba(0,30,50,0.85), rgba(0,60,90,0.6))" }}><div className="absolute inset-x-0 top-0 h-[78px] opacity-70" style={{ background:"linear-gradient(95deg, transparent, rgba(0,210,255,0.55), transparent)", backgroundSize:"200% 100%", animation:"waveShift 4.2s linear infinite" }} /><div className="absolute inset-x-0 bottom-0 h-[44px] opacity-60" style={{ background:"linear-gradient(95deg, transparent, rgba(79,240,178,0.6), transparent)", backgroundSize:"200% 100%", animation:"waveShift 6.5s linear infinite reverse" }} /></div>
                 </div>
                 <div className="mt-[14px] text-[11.8px] leading-relaxed text-white/76">
                   <span className="text-[#91f3ff] font-[650]">Next available:</span> Today 14:40 – Knysna / Sedgefield loop.
@@ -447,9 +446,9 @@ export default function App() {
 
           <div className="mt-10 relative rounded-[24px] overflow-hidden border border-white/[0.10] shadow-[0_30px_90px_rgba(0,0,0,0.48)]">
             <div className="relative h-[380px] sm:h-[520px] w-full">
-              <img src={gardenImages.bath2} alt="After" className="absolute inset-0 h-full w-full object-cover" />
+              <img src={gardenImages.bath2} alt="After" className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
               <div className="absolute inset-0" style={{ clipPath:`inset(0 ${100-beforeAfter}% 0 0)` }}>
-                <img src={gardenImages.bath3} alt="Before" className="h-full w-full object-cover saturate-[.65] brightness-[.82]" />
+                <img src={gardenImages.bath3} alt="Before" className="h-full w-full object-cover saturate-[.65] brightness-[.82]" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-[#06243a]/28" />
                 <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-[#031827]/78 text-[11.5px] font-[700] text-white/90 border border-white/14">BEFORE – 1998 tile / galvanized</div>
               </div>
@@ -564,7 +563,7 @@ export default function App() {
             <div className="relative rounded-[26px] overflow-hidden border border-white/[0.096] bg-[#0a1930]">
               {/* stylised map */}
               <div className="relative h-[420px] sm:h-[500px] overflow-hidden">
-                <img src={gardenImages.valley} alt="Garden Route" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]"/>
+                <img src={gardenImages.valley} alt="Garden Route" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" loading="lazy" decoding="async" />
                 <div className="absolute inset-0"
                   style={{ background:"radial-gradient(800px 360px at 60% 48%, rgba(0,210,255,0.086), transparent 70%), linear-gradient(180deg, rgba(7,23,42,0.42), rgba(6,15,28,0.78))" }}/>
                 {/* coastline line */}
@@ -721,7 +720,7 @@ export default function App() {
               <img src="/plumbers-logo.png" alt="Punctual Plumbers" className="h-[32px] w-auto" />
               <div>
                 <div className="display font-[800] text-white text-[14px] -mt-[2px]">Punctual Plumbers</div>
-                <div className="text-[11px] text-[#8feaff] tracking-wider -mt-[2px]">PARADISE PROTECTED</div>
+                <div className="text-[11px] text-[#8feaff] tracking-wider -mt-[2px]">SINCE 2009</div>
               </div>
             </div>
             <p className="mt-3 text-white/55 leading-relaxed">
