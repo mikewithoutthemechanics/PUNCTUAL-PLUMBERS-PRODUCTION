@@ -15,7 +15,8 @@ const colors = {
   slate: "#23364b",
 };
 
-const HERO_VIDEO = "https://videos.pexels.com/video-files/7109028/7109028-sd_640_360_25fps.mp4";
+const HERO_VIDEO = "https://videos.pexels.com/video-files/7109028/7109028-uhd_3840_2160_25fps.mp4";
+const WATER_TAP = "https://videos.pexels.com/video-files/29251309/12621376_1920_1080_30fps.mp4";
 
 const gardenImages = {
   knysna: "https://images.pexels.com/photos/38201192/pexels-photo-38201192.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1400",
@@ -36,26 +37,22 @@ const services = [
   { id:"install", icon:"🏗️", title:"New Installations", desc:"Coastal-grade copper & PEX. Salt air rated fittings for homes from Hartenbos to Plett.", color:"#CD7F32"},
   { id:"geyser", icon:"🔥", title:"Geyser Repairs", desc:"Burst geyser, we’re here for you. Full replacements and repairs.", color:"#f59e0b"},
   { id:"drain", icon:"🧹", title:"Drain Cleaning", desc:"High-pressure jetting. Roots from forest properties cleared – camera verified.", color:"#1E8449"},
-  { id:"filter", icon:"💧", title:"Water Filtration", desc:"Tank, borehole & municipal. Garden Route water – pure, mineral balanced.", color:"#00D2FF"},
+  { id:"filter", icon:"💧", title:"Water Filtration", desc:"Tank, borehole & municipal. Johannesburg / Central Gauteng water – pure, mineral balanced.", color:"#00D2FF"},
   { id:"emerg", icon:"🚨", title:"Emergency Callouts", desc:"True 24/7. Average 38min response inside route corridor. Live GPS dispatch.", color:"#ff4d6d"},
 ];
 
 const serviceTowns = [
   { name:"Mossel Bay", time:"22 min", lat: 71, lon: 18, quote:"Fixed our geyser burst at midnight. Legends." },
-  { name:"Hartenbos", time:"26 min", lat: 66, lon: 23, quote:"So neat you’d never know they were here." },
+  { name:"Hartenbos", time:"26 min", lat: 66, lon: 23, quote:"So neat you'd never know they were here." },
   { name:"George", time:"18 min", lat: 60, lon: 29, quote:"Full house re-pipe. Flawless." },
-  { name:"Wilderness", time:"24 min", lat: 55, lon: 37, quote:"Saved our beach house before the storm." },
-  { name:"Sedgefield", time:"29 min", lat: 50, lon: 45, quote:"Salt air specialists, finally." },
-  { name:"Knysna", time:"21 min", lat: 44, lon: 54, quote:"Lagoon home reno – artistry." },
-  { name:"Plettenberg Bay", time:"31 min", lat: 38, lon: 67, quote:"Best emergency response on the Route!" },
   { name:"Nature's Valley", time:"42 min", lat: 33, lon: 76, quote:"Forest pipe roots cleared permanently." },
   { name:"Storms River", time:"47 min", lat: 28, lon: 86, quote:"Worth every km. True pros." },
 ];
 
 const testimonials = [
   { name:"Liezl van Rooyen", area:"Knysna Heads", text:"We redid our entire water system with GRP. Copper detailing is museum-level. Their respect for our lagoon home was incredible.", stars:5, avatar:"LV" },
-  { name:"André & Sanet Botha", area:"Wilderness Beach", text:"Burst main at 3:12am in a storm. They were at the door 27 minutes later. 24/7 emergency response is not marketing — it’s real.", stars:5, avatar:"AB" },
-  { name:"Michael Chen", area:"Plettenberg Bay", text:"Whole-house filtration + copper re-pipe. Water bill -64%, pressure perfect. They even sent Garden Route water quality reports.", stars:5, avatar:"MC" },
+  { name:"André & Sanet Botha", area:"Wilderness Beach", text:"Burst main at 3:12am in a storm. They were at the door 27 minutes later. Punctual Plumbers is not marketing — it’s real.", stars:5, avatar:"AB" },
+  { name:"Michael Chen", area:"Plettenberg Bay", text:"Whole-house filtration + copper re-pipe. Water bill -64%, pressure perfect. They even sent Johannesburg / Central Gauteng water quality reports.", stars:5, avatar:"MC" },
   { name:"Nandi Mbeki", area:"George", text:"Three plumbers failed to find the slab leak. GRP found it in 14 minutes with thermal. Saved our oak floors.", stars:5, avatar:"NM" },
 ];
 
@@ -144,10 +141,10 @@ export default function App() {
         <div className="mx-auto max-w-[1250px] px-4 sm:px-7 pt-4">
           <div className="glass rounded-2xl px-4 sm:px-6 py-[13px] flex items-center justify-between shadow-[0_12px_60px_rgba(0,0,0,0.38)]">
             <div className="flex items-center gap-3">
-              <img src="/plumbers-logo.png" alt="Punctual Plumbers" className="h-[38px] w-auto" />
+              <img src="/plumbers-logo.png" alt="Punctual Plumbers" className="h-[64px] w-auto" />
               
               <div className="hidden lg:block ml-5 pl-5 border-l border-white/10 text-[11px] text-white/56 leading-snug">
-                Mossel Bay → Storms River<br/>Since 2009 • PIRB 3419
+                Serving Johannesburg & Central Gauteng<br/>Since 2009 • PIRB 3419
               </div>
             </div>
             <div className="hidden xl:flex items-center gap-8 text-[13.5px] text-white/80 font-[500]">
@@ -212,21 +209,19 @@ export default function App() {
           <div className="mt-6 sm:mt-8 max-w-[980px]">
             <h1 className="display text-[44px] sm:text-[64px] lg:text-[84px] leading-[0.89] font-[800] tracking-[-0.022em] text-white"
                 style={{ textShadow:"0 18px 55px rgba(0,0,0,.52)"}}>
-              Precision Plumbing.<br/>
               <span style={{
                 background: `linear-gradient(98deg, #bdf7ff 0%, ${colors.aqua} 38%, #4ff0b2 100%)`,
                 WebkitBackgroundClip:"text",
                 backgroundClip:"text",
                 color:"transparent"
-              }}>Pure Water.</span><br/>
-              Trusted Since 2009.
+              }}>Punctual Plumbers.</span>
             </h1>
           </div>
 
           <div className="mt-7 grid lg:grid-cols-[minmax(0,1fr)_430px] gap-8 items-end">
             <div>
               <p className="text-[17px] sm:text-[19px] leading-relaxed text-white/80 max-w-[600px]">
-                The Garden Route’s coastal-certified plumbers. From Mossel Bay to Storms River — copper craftsmanship built for salt air, forest roots & lagoon living.
+                The Johannesburg / Central Gauteng’s trusted plumbers. From emergency leaks to full installations — reliable craftsmanship built for home and business.
               </p>
               <div className="mt-5 flex flex-wrap gap-3 text-[11.7px] font-[600] text-white/72">
                 <span className="px-3 py-[7px] rounded-full border border-white/14 bg-white/[0.045]">PIRB 3419 • Licensed</span>
@@ -250,7 +245,7 @@ export default function App() {
                 </a>
               </div>
               <div className="mt-4 text-[12.2px] text-white/56">
-                Trusted across the Garden Route — from Mossel Bay to Storms River — since 2009
+                Trusted across the Johannesburg / Central Gauteng — since 2009
               </div>
             </div>
 
@@ -283,7 +278,7 @@ export default function App() {
                   ))}
                 </div>
                 <div className="mt-4 rounded-[14px] overflow-hidden border border-white/[0.08]">
-                  <div className="w-full h-[108px] relative overflow-hidden" style={{ background:"linear-gradient(180deg, rgba(0,30,50,0.85), rgba(0,60,90,0.6))" }}><div className="absolute inset-x-0 top-0 h-[78px] opacity-70" style={{ background:"linear-gradient(95deg, transparent, rgba(0,210,255,0.55), transparent)", backgroundSize:"200% 100%", animation:"waveShift 4.2s linear infinite" }} /><div className="absolute inset-x-0 bottom-0 h-[44px] opacity-60" style={{ background:"linear-gradient(95deg, transparent, rgba(79,240,178,0.6), transparent)", backgroundSize:"200% 100%", animation:"waveShift 6.5s linear infinite reverse" }} /></div>
+                  <video src={WATER_TAP} autoPlay loop muted playsInline className="w-full h-[108px] object-cover opacity-90" />
                 </div>
                 <div className="mt-[14px] text-[11.8px] leading-relaxed text-white/76">
                   <span className="text-[#91f3ff] font-[650]">Next available:</span> Today 14:40 – Knysna / Sedgefield loop.
@@ -313,16 +308,15 @@ export default function App() {
             style={{ background:"#101629", border:"1px solid rgba(255,255,255,0.073)", boxShadow:"0 20px 60px rgba(0,0,0,0.42)" }}>
             {[
               "⭐ 4.9/5 Google Rating",
-              "🏆 Garden Route's #1 Rated Plumber",
+              "🏆 Johannesburg's #1 Rated Plumber",
               "🛡️ Fully Licensed & Insured PIRB",
-              "🌍 Proud Local Business – 100% Route Team",
-              "💧 7-Year Install Guarantee",
+              "🌍 Proud Local Business – 100% Gauteng Team",
             ].map(t=> <span key={t} className="text-white/72 font-[500]">{t}</span>)}
           </div>
         </div>
       </section>
 
-      {/* Scene 1 – Garden Route deserves better */}
+      {/* Scene 1 – Johannesburg / Central Gauteng deserves better */}
       <section id="services" className="relative py-20 sm:py-28 overflow-hidden">
         <div className="absolute inset-0 opacity-[0.12]"
              style={{ backgroundImage:`url(${gardenImages.heads})`, backgroundSize:"cover", backgroundPosition:"center", backgroundAttachment:"fixed" }} />
@@ -337,43 +331,7 @@ export default function App() {
             className="max-w-[900px]"
           >
 
-            <h2 className="display mt-4 text-[34px] sm:text-[52px] lg:text-[60px] leading-[0.97] font-[800]">
-              The Garden Route deserves<br/>plumbing as beautiful as the place.
-            </h2>
-            <p className="mt-5 text-[18px] leading-relaxed text-white/73 max-w-[730px]" style={{ fontFamily:"'Playfair Display', serif", fontStyle:"italic" }}>
-              “From Knysna's lagoon to Wilderness's rivers — your water systems deserve the same care as the paradise you live in.”
-            </p>
-          </motion.div>
-
-          <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-[14px] sm:gap-[20px]">
-            {[
-              { v:2500, s:"+", label:"Homes serviced", sub:"Route corridor" },
-              { v:15, s:"+", label:"Years experience", sub:"Coastal certified" },
-              { v:24, s:"/7", label:"Emergency response", sub:"Live GPS" },
-              { v:100, s:"%", label:"Garden Route local", sub:"Born here. Serve here." },
-            ].map((c,i)=>(
-              <motion.div
-                key={c.label}
-                initial={{ opacity:0, y:24 }}
-                whileInView={{ opacity:1, y:0 }}
-                viewport={{ once:true }}
-                transition={{ delay:i*0.07, duration:0.6 }}
-                className="rounded-[22px] px-5 py-6 sm:py-8"
-                style={{
-                  background:"linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018))",
-                  border:"1px solid rgba(255,255,255,0.085)",
-                  boxShadow:"inset 0 1px 0 rgba(255,255,255,0.06)"
-                }}
-              >
-                <div className="display text-[34px] sm:text-[46px] font-[800]" style={{ color: colors.aqua }}>
-                  <AnimatedNumber value={c.v} suffix={c.s} />
-                </div>
-                <div className="mt-1 text-[14px] font-[700] text-white">{c.label}</div>
-                <div className="text-[12px] text-white/50">{c.sub}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+            </div>
       </section>
 
       {/* Scene 2 – Services */}
@@ -383,9 +341,7 @@ export default function App() {
             <div>
             <h2 className="display text-[34px] sm:text-[48px] font-[800] mt-3">What we can do for you.</h2>
             </div>
-            <div className="text-[14.7px] text-white/65 max-w-[520px]">
-              Coastal-grade materials, copper artistry, and thermal diagnostics. Every job photographed, COC’d and guaranteed.
-            </div>
+</div>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[14px] sm:gap-[20px]">
@@ -446,9 +402,9 @@ export default function App() {
 
           <div className="mt-10 relative rounded-[24px] overflow-hidden border border-white/[0.10] shadow-[0_30px_90px_rgba(0,0,0,0.48)]">
             <div className="relative h-[380px] sm:h-[520px] w-full">
-              <img src={gardenImages.bath2} alt="After" className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
+              <img src={gardenImages.bath2} alt="After" className="absolute inset-0 h-full w-full object-cover" />
               <div className="absolute inset-0" style={{ clipPath:`inset(0 ${100-beforeAfter}% 0 0)` }}>
-                <img src={gardenImages.bath3} alt="Before" className="h-full w-full object-cover saturate-[.65] brightness-[.82]" loading="lazy" decoding="async" />
+                <img src={gardenImages.bath3} alt="Before" className="h-full w-full object-cover saturate-[.65] brightness-[.82]" />
                 <div className="absolute inset-0 bg-[#06243a]/28" />
                 <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-[#031827]/78 text-[11.5px] font-[700] text-white/90 border border-white/14">BEFORE – 1998 tile / galvanized</div>
               </div>
@@ -490,7 +446,7 @@ export default function App() {
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
-              <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3" style={{ color: colors.ocean }}>Garden Route homeowners, unfiltered.</h3>
+              <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3" style={{ color: colors.ocean }}>Johannesburg / Central Gauteng homeowners, unfiltered.</h3>
             </div>
             <div className="text-[13.8px] text-[#355269]">⭐⭐⭐⭐⭐ 4.9 average • 312 Google reviews • video verified</div>
           </div>
@@ -535,9 +491,9 @@ export default function App() {
 
             <div className="grid gap-4">
               {[
-                { icon:"🏆", t:"Garden Route's #1 Rated Plumber", s:"Google Local Services 2023–2025"},
+                { icon:"🏆", t:"Johannesburg / Central Gauteng's #1 Rated Plumber", s:"Google Local Services 2023–2025"},
                 { icon:"🛡️", t:"PIRB 3419 • IOPSA Member", s:"Full insurance, COC traceable"},
-                { icon:"🌊", t:"Coastal Copper Certified", s:"Salt-air, forest root, lagoon rated"},
+                { icon:"🏆", t:"Quality Materials Guaranteed", s:"Premium pipes, fittings & workmanship"},
               ].map(b=>(
                 <div key={b.t} className="rounded-[18px] bg-white border border-[#0a3d6213] px-5 py-[18px] shadow-[0_8px_32px_rgba(10,61,98,0.062)]">
                   <div className="text-[19px]">{b.icon}</div>
@@ -555,7 +511,7 @@ export default function App() {
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
             <div className="max-w-[780px]">
             <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3">
-              Wherever you are on the Garden Route — we're already nearby.
+              Wherever you are on the Johannesburg / Central Gauteng — we're already nearby.
             </h3>
           </div>
 
@@ -563,7 +519,7 @@ export default function App() {
             <div className="relative rounded-[26px] overflow-hidden border border-white/[0.096] bg-[#0a1930]">
               {/* stylised map */}
               <div className="relative h-[420px] sm:h-[500px] overflow-hidden">
-                <img src={gardenImages.valley} alt="Garden Route" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" loading="lazy" decoding="async" />
+                <img src={gardenImages.valley} alt="Johannesburg / Central Gauteng" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]"/>
                 <div className="absolute inset-0"
                   style={{ background:"radial-gradient(800px 360px at 60% 48%, rgba(0,210,255,0.086), transparent 70%), linear-gradient(180deg, rgba(7,23,42,0.42), rgba(6,15,28,0.78))" }}/>
                 {/* coastline line */}
@@ -611,16 +567,11 @@ export default function App() {
       {/* Bonus viral features */}
       <section id="journal" className="py-20 sm:py-28" style={{ background: colors.charcoal }}>
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
-          <div className="text-center max-w-[820px] mx-auto">
-            <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3">Plumbing that's actually fun.</h3>
-            <p className="text-white/68 mt-3 text-[15.7px]">Built to be shared. Built to save you money.</p>
-          </div>
-
           <div className="mt-12 grid lg:grid-cols-2 gap-[18px]">
             <div className="lg:col-span-2 flex justify-center">
               <div className="rounded-[24px] border border-white/[0.095] bg-[#111c31] p-[22px] sm:p-[28px] w-full max-w-[560px]">
               <div className="text-[11px] tracking-widest text-[#7ef3ff] font-[700]">WATER SAVINGS CALCULATOR</div>
-              <div className="display text-[24px] font-[800] mt-1">How much Garden Route water are you wasting?</div>
+              <div className="display text-[24px] font-[800] mt-1">How much Johannesburg / Central Gauteng water are you wasting?</div>
               <div className="mt-5 grid gap-4">
                 <label className="text-[13px] text-white/80">People in home: <span className="font-[700] text-white">{people}</span>
                   <input type="range" min={1} max={8} value={people} onChange={e=>setPeople(+e.target.value)} className="w-full mt-1"/>
@@ -663,7 +614,7 @@ export default function App() {
               <div key={post.title} className="rounded-[20px] border border-white/[0.095] bg-[#131f35] p-5">
                 <div className="text-[10.5px] tracking-widest font-[800]" style={{ color: colors.aqua }}>{post.tag}</div>
                 <div className="mt-2 font-[680] text-[15.4px] text-white leading-snug">{post.title}</div>
-                <div className="mt-3 text-[12px] text-white/52">{post.read} • Garden Route seasonal tips</div>
+                <div className="mt-3 text-[12px] text-white/52">{post.read} • Johannesburg / Central Gauteng seasonal tips</div>
               </div>
             ))}
           </div>
@@ -678,11 +629,11 @@ export default function App() {
               <div className="text-[11.5px] tracking-[0.22em] text-[#b9faff] font-[700]">READY?</div>
               <h3 className="display text-[34px] sm:text-[46px] font-[800] mt-3 text-white leading-[0.96]">Flow with confidence.<br/>Your water. Our craft.</h3>
 <p className="mt-4 text-[15.8px] text-white/78 max-w-[530px]">
-                 Free route assessment today. Fixed quotes, coastal copper, PIRB stamped.
+                 Free route assessment today. Fixed quotes, quality materials, PIRB stamped.
 </p>
              </div>
             <div className="rounded-[24px] bg-white text-[#1b2d3d] p-[20px] sm:p-[26px] shadow-[0_28px_80px_rgba(0,0,0,0.32)]">
-              <div className="text-[13.3px] font-[750]" style={{ color: colors.ocean }}>Free Garden Route assessment</div>
+              <div className="text-[13.3px] font-[750]" style={{ color: colors.ocean }}>Free Johannesburg / Central Gauteng assessment</div>
               <form className="mt-4 grid gap-[12px]" onSubmit={e=>{e.preventDefault(); alert("Thank you!")}}>
                 <div className="grid sm:grid-cols-2 gap-[12px]">
                   <input required placeholder="Name" className="w-full rounded-[12px] border border-[#c9d8e4] px-[13px] py-[12px] text-[14px] bg-white outline-none focus:border-[#00bde6]"/>
@@ -717,14 +668,13 @@ export default function App() {
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7 grid md:grid-cols-4 gap-10 text-[13.6px] text-white/68">
           <div>
             <div className="flex items-center gap-2">
-              <img src="/plumbers-logo.png" alt="Punctual Plumbers" className="h-[32px] w-auto" />
+              <img src="/plumbers-logo.png" alt="Punctual Plumbers" className="h-[56px] w-auto" />
               <div>
                 <div className="display font-[800] text-white text-[14px] -mt-[2px]">Punctual Plumbers</div>
-                <div className="text-[11px] text-[#8feaff] tracking-wider -mt-[2px]">SINCE 2009</div>
               </div>
             </div>
             <p className="mt-3 text-white/55 leading-relaxed">
-              Coastal-certified copper plumbers. PIRB 3419. Mossel Bay → Storms River since 2009. 24/7 emergency.
+              Quality-certified plumbers. PIRB 3419. Serving Johannesburg & Central Gauteng since 2009. 24/7 emergency.
             </p>
           </div>
           <div>

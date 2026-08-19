@@ -253,7 +253,7 @@ export default function App() {
           <div className="mt-7 grid lg:grid-cols-[minmax(0,1fr)_430px] gap-8 items-end">
             <div>
               <p className="text-[17px] sm:text-[19px] leading-relaxed text-white/80 max-w-[600px]">
-                The Garden Route’s coastal-certified plumbers. From Mossel Bay to Storms River — copper craftsmanship built for salt air, forest roots & lagoon living.
+                The Johannesburg / Central Gauteng’s trusted plumbers. From emergency leaks to full installations — reliable craftsmanship built for home and business.
               </p>
               <div className="mt-5 flex flex-wrap gap-3 text-[11.7px] font-[600] text-white/72">
                 <span className="px-3 py-[7px] rounded-full border border-white/14 bg-white/[0.045]">PIRB 3419 • Licensed</span>
@@ -277,7 +277,7 @@ export default function App() {
                 </a>
               </div>
               <div className="mt-4 text-[12.2px] text-white/56">
-                Trusted across the Garden Route — from Mossel Bay to Storms River — since 2009
+                Trusted across the Johannesburg / Central Gauteng — since 2009
               </div>
             </div>
 
@@ -341,10 +341,9 @@ export default function App() {
             style={{ background:"#101629", border:"1px solid rgba(255,255,255,0.073)", boxShadow:"0 20px 60px rgba(0,0,0,0.42)" }}>
             {[
               "⭐ 4.9/5 Google Rating",
-              "🏆 Garden Route's #1 Rated Plumber",
+              "🏆 Johannesburg's #1 Rated Plumber",
               "🛡️ Fully Licensed & Insured PIRB",
-              "🌍 Proud Local Business – 100% Route Team",
-              "💧 7-Year Install Guarantee",
+              "🌍 Proud Local Business – 100% Gauteng Team",
             ].map(t=> <span key={t} className="text-white/72 font-[500]">{t}</span>)}
           </div>
         </div>
@@ -366,19 +365,19 @@ export default function App() {
           >
 
             <h2 className="display mt-4 text-[34px] sm:text-[52px] lg:text-[60px] leading-[0.97] font-[800]">
-              The Garden Route deserves<br/>plumbing as beautiful as the place.
+              Johannesburg deserves<br/>plumbing as beautiful as the place.
             </h2>
             <p className="mt-5 text-[18px] leading-relaxed text-white/73 max-w-[730px]" style={{ fontFamily:"'Playfair Display', serif", fontStyle:"italic" }}>
-              “From Knysna's lagoon to Wilderness's rivers — your water systems deserve the same care as the paradise you live in.”
+              “From burst pipes to full installations — your water systems deserve the same care as the home you live in.”
             </p>
           </motion.div>
 
           <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-[14px] sm:gap-[20px]">
             {[
-              { v:2500, s:"+", label:"Homes serviced", sub:"Route corridor" },
-              { v:15, s:"+", label:"Years experience", sub:"Coastal certified" },
+              { v:2500, s:"+", label:"Homes serviced", sub:"Gauteng corridor" },
+              { v:15, s:"+", label:"Years experience", sub:"Quality certified" },
               { v:24, s:"/7", label:"Emergency response", sub:"Live GPS" },
-              { v:100, s:"%", label:"Garden Route local", sub:"Born here. Serve here." },
+              { v:100, s:"%", label:"Gauteng local", sub:"Born here. Serve here." },
             ].map((c,i)=>(
               <motion.div
                 key={c.label}
@@ -412,7 +411,7 @@ export default function App() {
             <h2 className="display text-[34px] sm:text-[48px] font-[800] mt-3">What we can do for you.</h2>
             </div>
             <div className="text-[14.7px] text-white/65 max-w-[520px]">
-              Coastal-grade materials, copper artistry, and thermal diagnostics. Every job photographed, COC’d and guaranteed.
+              Trusted materials, expert artistry, and thorough diagnostics. Every job photographed, COC'd and guaranteed.
             </div>
           </div>
 
@@ -591,7 +590,7 @@ export default function App() {
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
-              <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3" style={{ color: colors.ocean }}>Garden Route homeowners, unfiltered.</h3>
+              <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3" style={{ color: colors.ocean }}>Johannesburg homeowners, unfiltered.</h3>
             </div>
             <div className="text-[13.8px] text-[#355269]">⭐⭐⭐⭐⭐ 4.9 average • 312 Google reviews • video verified</div>
           </div>
@@ -625,9 +624,9 @@ export default function App() {
 
             <div className="grid gap-4">
               {[
-                { icon:"🏆", t:"Garden Route's #1 Rated Plumber", s:"Google Local Services 2023–2025"},
+                { icon:"🏆", t:"Johannesburg's #1 Rated Plumber", s:"Google Local Services 2023–2025"},
                 { icon:"🛡️", t:"PIRB 3419 • IOPSA Member", s:"Full insurance, COC traceable"},
-                { icon:"🌊", t:"Coastal Copper Certified", s:"Salt-air, forest root, lagoon rated"},
+                { icon:"⭐", t:"Quality Materials Guaranteed", s:"Premium pipes, fittings & workmanship"},
               ].map(b=>(
                 <div key={b.t} className="rounded-[18px] bg-white border border-[#0a3d6213] px-5 py-[18px] shadow-[0_8px_32px_rgba(10,61,98,0.062)]">
                   <div className="text-[19px]">{b.icon}</div>
@@ -645,7 +644,7 @@ export default function App() {
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
             <div className="max-w-[780px]">
             <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3">
-              Wherever you are on the Garden Route — we're already nearby.
+              Wherever you are in Johannesburg / Central Gauteng — we're already nearby.
             </h3>
           </div>
 
@@ -702,7 +701,7 @@ export default function App() {
       <section id="journal" className="py-20 sm:py-28" style={{ background: colors.charcoal }}>
         <div className="mx-auto max-w-[1250px] px-5 sm:px-7">
           <div className="text-center max-w-[820px] mx-auto">
-            <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3">Plumbing that's actually fun.</h3>
+            <h3 className="display text-[32px] sm:text-[44px] font-[800] mt-3">Plumbing that works as hard as you do.</h3>
             <p className="text-white/68 mt-3 text-[15.7px]">Built to be shared. Built to save you money.</p>
           </div>
 
@@ -710,7 +709,7 @@ export default function App() {
             {/* Water savings calculator */}
             <div className="rounded-[24px] border border-white/[0.095] bg-[#111c31] p-[22px] sm:p-[28px]">
               <div className="text-[11px] tracking-widest text-[#7ef3ff] font-[700]">WATER SAVINGS CALCULATOR</div>
-              <div className="display text-[24px] font-[800] mt-1">How much Garden Route water are you wasting?</div>
+              <div className="display text-[24px] font-[800] mt-1">How much water are you wasting?</div>
               <div className="mt-5 grid gap-4">
                 <label className="text-[13px] text-white/80">People in home: <span className="font-[700] text-white">{people}</span>
                   <input type="range" min={1} max={8} value={people} onChange={e=>setPeople(+e.target.value)} className="w-full mt-1"/>
@@ -752,7 +751,7 @@ export default function App() {
               <div key={post.title} className="rounded-[20px] border border-white/[0.095] bg-[#131f35] p-5">
                 <div className="text-[10.5px] tracking-widest font-[800]" style={{ color: colors.aqua }}>{post.tag}</div>
                 <div className="mt-2 font-[680] text-[15.4px] text-white leading-snug">{post.title}</div>
-                <div className="mt-3 text-[12px] text-white/52">{post.read} • Garden Route seasonal tips</div>
+                <div className="mt-3 text-[12px] text-white/52">{post.read} • Johannesburg seasonal tips</div>
               </div>
             ))}
           </div>
