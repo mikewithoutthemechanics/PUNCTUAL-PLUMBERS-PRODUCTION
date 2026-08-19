@@ -51,8 +51,8 @@ export function CarouselCylindricalVariant1() {
       controls.start({
         rotateY: rotation.get() + 360,
         transition: {
-          duration: 35, // Very slow rotation
-          easing: "linear",
+          duration: 35,
+          ease: "linear",
         },
       });
     };
@@ -100,7 +100,6 @@ export function CarouselCylindricalVariant1() {
           onDragEnd={handleDragEnd}
           style={{
             transform: transform,
-            rotateY: rotation,
             width: cylinderWidth,
             transformStyle: "preserve-3d",
           }}

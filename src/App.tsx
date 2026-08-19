@@ -88,25 +88,7 @@ export default function App() {
   const [mapActive, setMapActive] = useState(serviceTowns[5]);
   const [mobileMenu, setMobileMenu] = useState(false);
 
-  // CoverFlow carousel
-  const flowFacts = [
-    { emoji:"🔄", fact:"Copper pipes last 50+ years in coastal homes. PVC degrades 4x faster in salt air.", tag:"MATERIALS" },
-    { emoji:"💧", fact:"A dripping tap wastes 11,000+ litres per year — enough to fill a Knysna pool.", tag:"WASTE" },
-    { emoji:"🔍", fact:"Thermal leak detection finds 94% of slab leaks within 15 minutes — no demo needed.", tag:"TECH" },
-    { emoji:"🌿", fact:"70% of Plett homes have undetected forest root intrusions in drainage. Camera inspect.", tag:"ROOTS" },
-    { emoji:"🛡️", fact:"Our 7-year workmanship guarantee is the longest on the Garden Route. We stand by it.", tag:"GUARANTEE" },
-  ];
-  const [flowIdx, setFlowIdx] = useState(1);
-  const [flowPaused, setFlowPaused] = useState(false);
-  useEffect(() => {
-    if (flowPaused) return;
-    const id = setInterval(() => setFlowIdx(i => i >= paddedFlow.length - 2 ? 1 : i + 1), 4200);
-    return () => clearInterval(id);
-  }, [flowPaused]);
 
-  const paddedFlow = useMemo(() => [flowFacts[flowFacts.length - 1], ...flowFacts, flowFacts[0]], [flowFacts]);
-
-  // Water calculator
   const [people, setPeople] = useState(3);
   const [showers, setShowers] = useState(14);
   const [garden, setGarden] = useState(true);
